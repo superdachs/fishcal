@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Highscore</title>
+</head>
+<body>
+
+{% for fish in catches %}
+    <h3>{{ fish.0.name }}</h3>
+    {% for catch in fish.1 %}
+        {{ catch.fisherman.account.username }} - {{ catch.size }}cm ({{ catch.weight }}g) - {{ catch.water.name }}
+    {% endfor %}
+{% endfor %}
+
+</body>
+</html>
